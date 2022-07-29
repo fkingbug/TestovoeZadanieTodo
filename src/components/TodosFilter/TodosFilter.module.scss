@@ -1,0 +1,16 @@
+.filters {
+  @apply flex justify-between text-slate-300 font-medium px-2 items-center mb-7;
+  > ul {
+    @apply flex;
+    > li {
+      @apply cursor-pointer py-1 px-2 box-border  rounded-xl border border-transparent transition-colors;
+
+      &:not(:first-child) {
+        @apply ml-5;
+      }
+    }
+    .active {
+      @apply border border-slate-300;
+    }
+  }
+}

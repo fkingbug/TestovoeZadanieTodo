@@ -1,0 +1,12 @@
+.itemStyle {
+  @apply cursor-pointer flex items-center py-3 px-5 mb-2  rounded-xl border border-slate-500 text-slate-300 font-medium;
+  .title {
+    @apply break-all flex-1 cursor-pointer;
+  }
+  .delete {
+    @apply cursor-pointer;
+    &:hover {
+      @apply opacity-50;
+    }
+  }
+}

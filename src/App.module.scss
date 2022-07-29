@@ -1,0 +1,6 @@
+.container {
+  @apply w-3/5 mx-auto flex flex-col px-5 pt-7;
+  @media screen and (max-width: 500px) {
+    @apply w-full;
+  }
+}

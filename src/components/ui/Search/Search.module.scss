@@ -1,0 +1,18 @@
+.search {
+  @apply rounded-xl border border-slate-300 px-3 py-2 flex items-center transition-colors mb-5;
+  > svg {
+    @apply text-slate-300 mr-2 text-3xl transition-colors cursor-pointer;
+    &:hover {
+      @apply opacity-50;
+    }
+  }
+  > input {
+    @apply text-white placeholder:text-gray-600 block w-full bg-transparent outline-none;
+  }
+  &:focus-within {
+    @apply border-slate-500;
+    > svg {
+      @apply text-slate-400;
+    }
+  }
+}
