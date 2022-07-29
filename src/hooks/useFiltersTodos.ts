@@ -1,6 +1,6 @@
 import { ITodo } from '../@types/ITodo'
 
-export const useFiltersTodos = (activeFilter: string, todos: ITodo[]) => {
+export const useFiltersTodos = (activeFilter: string, todos: ITodo[]): ITodo[] => {
   return activeFilter === 'All'
     ? todos
     : activeFilter === 'Active'

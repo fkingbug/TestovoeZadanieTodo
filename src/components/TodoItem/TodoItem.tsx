@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react'
+import { FC, useCallback, useContext } from 'react'
 import { AiOutlineDelete } from 'react-icons/ai'
 
 import { CompleteItem } from '../ui/CompleteItem'
@@ -7,21 +7,24 @@ import { ITodo } from '../../@types/ITodo'
 
 import styles from './TodoItem.module.scss'
 
-export interface sadsad extends ITodo {
+export interface TodoItemProps extends ITodo {
   handleCompleteTodo: (str: string) => void
   handleRemoveTodo: (str: string) => void
 }
-export const TodoItem: FC<sadsad> = ({
+export const TodoItem: FC<TodoItemProps> = ({
   id,
   isCompleted,
   title,
   handleCompleteTodo,
   handleRemoveTodo,
 }) => {
-  const handleDelete = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
-    event.stopPropagation()
-    handleRemoveTodo(id)
-  }
+  const handleDelete = useCallback(
+    (event: React.MouseEvent<SVGElement, MouseEvent>) => {
+      event.stopPropagation()
+      handleRemoveTodo(id)
+    },
+    [handleRemoveTodo]
+  )
 
   return (
     <div onClick={() => handleCompleteTodo(id)} className={styles.itemStyle}>
